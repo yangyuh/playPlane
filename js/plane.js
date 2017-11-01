@@ -12,13 +12,17 @@ var endGame = document.getElementById("endGame");
 var scoreLabel = document.getElementById("scoreLabel");
 var scoreEnd = document.getElementById("scoreEnd");
 
-//添加我的小飞机
-//imgSrc  飞机图片
-//boomSrc 飞机爆炸图片
-//imgWidth 飞机宽度
-//imgHeight 飞机高度
-//imgX     飞机x坐标
-//imgY     飞机Y坐标
+/**
+ * 添加小飞机
+ * @param {Object} imgSrc 飞机图片
+ * @param {Object} boomSrc 飞机爆炸图片
+ * @param {Object} endSrc
+ * @param {Object} imgWidth 飞机宽度
+ * @param {Object} imgHeight 飞机高度
+ * @param {Object} imgX 飞机x坐标
+ * @param {Object} imgY 飞机Y坐标
+ * @param {Object} imgNode
+ */
 function plane(imgSrc, boomSrc, endSrc, imgWidth, imgHeight, imgX, imgY, imgNode) {
 	this.imgSrc = imgSrc;
 	this.boomSrc = boomSrc;
@@ -61,7 +65,15 @@ function movePlane(e) {
 	myPlane.imgNode.style.top = y - 40 + "px";
 }
 gameDiv.addEventListener("mousemove", movePlane, true);
-//定义子弹
+/**
+ * 定义子弹
+ * @param {Object} imgSrc
+ * @param {Object} imgWidth
+ * @param {Object} imgHeight
+ * @param {Object} imgX
+ * @param {Object} imgY
+ * @param {Object} bNode
+ */
 function bullet(imgSrc, imgWidth, imgHeight, imgX, imgY, bNode) {
 	this.imgSrc = imgSrc;
 	this.imgWidth = imgWidth;
@@ -83,8 +95,21 @@ function bullet(imgSrc, imgWidth, imgHeight, imgX, imgY, bNode) {
 		this.bNode.style.top = parseInt(this.bNode.style.top) - 5 + "px";
 	}
 }
-
-//定义敌机
+/**
+ * 定义敌机
+ * @param {Object} imgSrc
+ * @param {Object} shotSrc
+ * @param {Object} boomSrc
+ * @param {Object} HP
+ * @param {Object} Score
+ * @param {Object} dieTime
+ * @param {Object} imgWidth
+ * @param {Object} imgHeight
+ * @param {Object} imgX
+ * @param {Object} imgY
+ * @param {Object} death
+ * @param {Object} eNode
+ */
 function eplane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode) {
 	this.death = death;
 	this.imgSrc = imgSrc;
@@ -110,8 +135,21 @@ function eplane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeigh
 	this.init();
 
 }
-
-//小飞机移动方法
+/**
+ * 小飞机移动方法
+ * @param {Object} imgSrc
+ * @param {Object} shotSrc
+ * @param {Object} boomSrc
+ * @param {Object} HP
+ * @param {Object} Score
+ * @param {Object} dieTime
+ * @param {Object} imgWidth
+ * @param {Object} imgHeight
+ * @param {Object} imgX
+ * @param {Object} imgY
+ * @param {Object} death
+ * @param {Object} eNode
+ */
 function smallPlane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode) {
 	eplane.call(this, imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode);
 	this.speed = 3;
@@ -119,8 +157,21 @@ function smallPlane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgH
 		this.eNode.style.top = parseInt(this.eNode.style.top) + this.speed + "px";
 	};
 }
-
-//中飞机移动方法
+/**
+ * 中飞机移动方法
+ * @param {Object} imgSrc
+ * @param {Object} shotSrc
+ * @param {Object} boomSrc
+ * @param {Object} HP
+ * @param {Object} Score
+ * @param {Object} dieTime
+ * @param {Object} imgWidth
+ * @param {Object} imgHeight
+ * @param {Object} imgX
+ * @param {Object} imgY
+ * @param {Object} death
+ * @param {Object} eNode
+ */
 function midPlane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode) {
 	eplane.call(this, imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode);
 	this.speed = 2;
@@ -128,8 +179,21 @@ function midPlane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHei
 		this.eNode.style.top = parseInt(this.eNode.style.top) + this.speed + "px";
 	};
 }
-
-//大飞机移动方法
+/**
+ * 大飞机移动方法
+ * @param {Object} imgSrc
+ * @param {Object} shotSrc
+ * @param {Object} boomSrc
+ * @param {Object} HP
+ * @param {Object} Score
+ * @param {Object} dieTime
+ * @param {Object} imgWidth
+ * @param {Object} imgHeight
+ * @param {Object} imgX
+ * @param {Object} imgY
+ * @param {Object} death
+ * @param {Object} eNode
+ */
 function bigPlane(imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode) {
 	eplane.call(this, imgSrc, shotSrc, boomSrc, HP, Score, dieTime, imgWidth, imgHeight, imgX, imgY, death, eNode);
 	this.speed = 1;
