@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#mainDiv{
+    width: 320px;
+    height: 568px;
+    border: 2px solid #2d5910;
+    margin: auto;
+    position: relative;
+}
+#startDiv{
+    background-image: url("../image/开始背景.png");
+    width: 320px;
+    height: 568px;
+    position: absolute;
+}
+#startBtn{
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #404040;
+    background-color: rgba(128, 128, 128, 0.02);
+    position: absolute;
+    top: 400px;
+    left: 110px;
+    cursor: pointer;
+}
+#startBtn:active{
+    background-color: rgba(123, 123, 123, 0.67);
+}
+.btn{
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #404040;
+    background-color: rgba(175, 175, 175, 0.67);
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.btn:active{
+    background-color: rgba(24, 24, 24, 0.67);
+}
+#gameDiv{
+    background-image: url("../image/background_1.png");
+    background-repeat: repeat-y;
+    width: 320px;
+    height: 568px;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+}
+#gameDiv label{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+#endGame {
+    padding-top: 10px;
+    width: 160px;
+    height: 180px;
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    display: none;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.90);
+    border: 1px solid #727272;
+}
+#endGame h3{
+    margin-top: 20px;
+    display: inline-block;
+    width: 160px;
+    height: 30px;
+    background-color: rgba(175, 175, 175, 0.67);
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+#endGame label{
+    text-align: center;
+    height: 50px;
+    width: 120px;
+    line-height: 50px;
+    display: inline-block;
+    color: brown;
+}
+#endGame button{
+    border-radius: 10px;
+    width: 120px;
+    height: 30px;
+    border: 1px solid #404040;
+    background-color: rgba(175, 175, 175, 0.67);
+    cursor: pointer;
+}
+#endGame button:hover{
+    background-color: rgb(136, 136, 136);
+}
+img{
+    position: absolute;
+}
+#pauseDiv {
+    width: 120px;
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    display: none;
+    /*background-color: #080808;*/
+}
